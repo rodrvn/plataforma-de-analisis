@@ -26,18 +26,27 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200 bg-white">
-            <!-- Inicio de los datos de la tabla -->
+        
+              
+
+
+
+
+
+
             {% for cliente in clientes %}
-            <tr>
-                <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                {{ cliente[1] }}</td>
-                <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ cliente[2] }}</td>
-                <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ cliente[3] }}</td>
-                <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ cliente[3] }}</td>
-                <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                    <a href="/editar/{{ cliente[0] }}" class="text-sky-600 hover:text-sky-900">Edit</a>
-                </td>
-            </tr>
+              {% if cliente[0] == 2%}
+                <tr>
+                    <button class="">{{ cliente[1] }}</button>
+                    <h1 class="">{{ cliente[2] }}</td>
+                    <h1 class="">{{ cliente[3] }}</td>
+                    <h1 class="">{{ cliente[4] }}</td>
+
+
+                      
+                  
+                </tr> 
+              {% endif%}
             {% endfor %}
         </tbody>
       </table>
