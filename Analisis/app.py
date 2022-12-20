@@ -29,5 +29,24 @@ def clientes():
     clientes = recibir_clientes()
     return render_template("lista.html", clientes=clientes)
 
+
+@app.route('/perfil')
+def cliente():
+    clientes = recibir_clientes()
+    for i in clientes:
+        if i[0]==1:
+            cliente = i
+    ct = cliente[3] - cliente[4]
+    return render_template("perfil.html", cliente=cliente, total = ct)
+
+@app.route('/analisis')
+def client():
+    client = recibir_clientes()
+    for i in client:
+        if i[0]==1:
+            client = i
+    cct = client[3] - client[4]
+    return render_template("analisis.html", client=client, total = cct)
+
 if __name__ == '__main__':
-    app.run(debug=True,port=000)
+    app.run(debug=True,port=9000)

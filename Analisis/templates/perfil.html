@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Perfil</title>
+</head>
+<body>
+    <div class="content-between bg-gray-100">    
+        <div class="bg-gray-100 grid grid-cols-3 grid-rows-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#FFFFF] col-span-2  mt-10 mx-5 max-w-3xl">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="py-3 px-5 bg-gray-50 text-center">FLUJO DE DINERO</div>
+                    <canvas class="p-10" id="chartLine"></canvas>
+                </div>
+                
+                <!-- Required chart.js -->
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                
+                <!-- Chart line -->
+                <script>
+                    const labels = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                    const data = {
+                    labels: labels,
+                    datasets: [
+                        {
+                        label: "Bitcoin",
+                        backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                        borderColor: "hsl(252, 82.9%, 67.8%)",
+                        data: [0, 10, 5, 2, 20, 30, 45, 40, 35, 20, 10],
+                        },
+                    ],
+                    };
+                
+                    const configLineChart = {
+                    type: "line",
+                    data,
+                    options: {},
+                    };
+                
+                    var chartLine = new Chart(
+                    document.getElementById("chartLine"),
+                    configLineChart
+                    );
+                </script>
+            </div>
+
+            
+            <div class="bg-[#FFCD10] row-span-2 mx-auto m-8 p-8 max-w-3xl shadow-lg rounded-lg overflow-hidden">
+                <div>
+                    
+                    <div>
+                    <img class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
+                    </div>
+                    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                    <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+                        <div class="flex justify-self-center">
+                        <img class="h-16 w-16 rounded-full ring-4 ring-white" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+                        </div>
+                    </div>
+                    <div class="mt-6 min-w-0 flex-1 sm:block 2xl">
+                        <h1 class="truncate text-2xl font-bold text-gray-900">{{ cliente[1] }}</h1>
+                    </div>
+
+                    <div class="mt-6 min-w-0 flex-1 sm:block 2xl">
+                        <h1 class="truncate text-xl text-gray-900">{{ cliente[2] }}</h1>
+                    </div>
+
+                    <div class="mt-6 min-w-0 flex-1 sm:block 2xl">
+                        <h1 class="truncate text-xl text-gray-900">Capital: {{ total }}</h1>
+                    </div>
+                    <div class="flex-1 mt-6 min-w-0 sm:block 2xl"></div>
+                        <button class="bg-[#facd52] hover:bg-[#d9a821] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow">
+                            Invierte aqui
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8">
+                <div class="mx-auto max-w-3xl shadow-lg rounded-lg overflow-hidden">
+                    <div class="bg-[#FFCD10]">
+                        <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+                        <div class="text-center">
+                            <h2 class="text-lg font-semibold text-indigo-600">Ingreso</h2>
+                            <p class="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">{{ cliente[3] }}</p>
+                            <p class="mx-auto mt-5 max-w-xl text-xl text-gray-500">Start building for free,</p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="p-8">
+                <div class="mx-auto max-w-3xl shadow-lg rounded-lg overflow-hidden">
+                    <div class="bg-[#FFCD10]">
+                        <div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+                        <div class="text-center">
+                            <h2 class="text-lg font-semibold text-indigo-600">Egreso</h2>
+                            <p class="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">{{ cliente[4] }}</p>
+                            <p class="mx-auto mt-5 max-w-xl text-xl text-gray-500">Start building for free</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- <a href="{{ url_for('ruta que tenes que poner para que se conecte') }}">
+    <button type="button" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Cancel</button>
+ <div class="flex justify-evenly">
+      <a href="/eliminar/{{ participante[0] }}">
+        <button type="button" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-red-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Delete</button>
+      </a>    
+</a> -->
