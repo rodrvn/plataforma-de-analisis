@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrate!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex items-center justify-center h-screen bg-yellow-400">
+      <form>
+        <div class="bg-white w-96 p-6 rounded-lg shadow-sm">
+          <h1 class="text-yellow-400 font-bold text-center text-lg">
+            Registrate
+          </h1>
+          <div class="flex items-center justify-center mb-4"></div>
+          <label class="text-gray-700">Nombre y apellido:</label>
+          <input
+            class="w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4"
+            type="usuario"
+          />
+          <label class="text-gray-700">Email o Numero:</label>
+          <input
+            class="w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4"
+            type="email o numero"
+          />
+          <label class="text-gray-700">Contraseña:</label>
+          <input
+            class="w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4"
+            type="contraseña"
+          />
+          <input id="recordar" class="mb-6" type="checkbox" />
+          <label for="recordar" class="text-gray-700">Recordar usuario</label>
+          <br />
+        
+          <a href="/">
+          <button type="button" class="bg-gray-400 w-full text-gray-100 py-2 rounded-full hover:bg-gray-200 transition.colors">
+            Vamos alla!
+          </button>
+          </a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

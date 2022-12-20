@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Perfil</title>
+  </head>
+  <body class="bg-[#FFCD10]">
+    <div class="flex justify-around py-4">
+      <!-- primera tarjeta -->
+      <div class="max-w-xl bg-gray-50 shadow-lg rounded-lg">
+        <div class="rounded-lg overflow-hidden">
+          <div
+            class="py-3 px-5 bg-gray-50 font-bold text-2xl text-yellow-400 text-center"
+          >
+            Wision
+          </div>
+          <canvas class="p-10" id="chartLine"></canvas>
+        </div>
+
+        <!-- Required chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart line -->
+        <script>
+          const labels = [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+          ];
+          const data = {
+            labels: labels,
+            datasets: [
+              {
+                label: "Flujo de dinero",
+                backgroundColor: "#53B615",
+                borderColor: "#53B615",
+                data: [0, 10, 5, 2, 20, 30, 45],
+              },
+            ],
+          };
+
+          const configLineChart = {
+            type: "line",
+            data,
+            options: {},
+          };
+
+          var chartLine = new Chart(
+            document.getElementById("chartLine"),
+            configLineChart
+          );
+        </script>
+      </div>
+
+      <!-- segunda tarjeta -->
+      <div
+        class="py-3 px-5 bg-gray-50 font-bold text-2xl text-[#FFCD10] text-center shadow-lg rounded-lg"
+      >
+        <div class="rounded-lg overflow-hidden">
+          <div class="py-3 px-5 bg-gray-50">Krunchy-Krunchy</div>
+          <canvas class="p-10" id="chartBar"></canvas>
+        </div>
+
+        <!-- Required chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart bar -->
+        <script>
+          const labelsBarChart = [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+          ];
+          const dataBarChart = {
+            labels: labelsBarChart,
+            datasets: [
+              {
+                label: "Entrada de dinero",
+                backgroundColor: "#508AD6",
+                borderColor: "#508AD6",
+                data: [0, 10, 5, 2, 20, 30, 45],
+              },
+            ],
+          };
+
+          const configBarChart = {
+            type: "bar",
+            data: dataBarChart,
+            options: {},
+          };
+
+          var chartBar = new Chart(
+            document.getElementById("chartBar"),
+            configBarChart
+          );
+        </script>
+      </div>
+    </div>
+
+    <div class="flex justify-around pb-4">
+      <!-- tercera tarjeta -->
+      <div
+        class="shadow-lg py-3 px-5 bg-gray-50 font-bold text-2xl text-[#FFCD10] text-center rounded-lg"
+      >
+        <div class="rounded-lg overflow-hidden">
+          <div class="py-3 px-5 bg-gray-50">Pet Estudio</div>
+          <canvas class="p-10" id="chartDoughnut"></canvas>
+        </div>
+
+        <!-- Required chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart doughnut -->
+        <script>
+          const dataDoughnut = {
+            labels: ["Flujo", "Entrada", "Salida"],
+            datasets: [
+              {
+                label: "My First Dataset",
+                data: [300, 50, 100],
+                backgroundColor: ["#53B615", "#508AD6", "#56C796"],
+                hoverOffset: 4,
+              },
+            ],
+          };
+
+          const configDoughnut = {
+            type: "doughnut",
+            data: dataDoughnut,
+            options: {},
+          };
+
+          var chartBar = new Chart(
+            document.getElementById("chartDoughnut"),
+            configDoughnut
+          );
+        </script>
+      </div>
+
+      <!-- cuarta tarjeta -->
+
+      <div class="max-w-xl bg-gray-50 shadow-lg rounded-lg">
+        <div class="rounded-lg overflow-hidden">
+          <div
+            class="py-3 px-5 bg-gray-50 font-bold text-2xl text-center text-[#FFCD10]"
+          >
+            Hipermercado Luisiño
+          </div>
+          <canvas class="p-10" id="chartPie"></canvas>
+        </div>
+
+        <!-- Required chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart pie -->
+        <script>
+          const dataPie = {
+            labels: ["Flujo", "Entrada", "Salida"],
+            datasets: [
+              {
+                label: "My First Dataset",
+                data: [300, 50, 100],
+                backgroundColor: ["#53B615", "#508AD6", "#56C796"],
+                hoverOffset: 4,
+              },
+            ],
+          };
+
+          const configPie = {
+            type: "pie",
+            data: dataPie,
+            options: {},
+          };
+
+          var chartBar = new Chart(
+            document.getElementById("chartPie"),
+            configPie
+          );
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

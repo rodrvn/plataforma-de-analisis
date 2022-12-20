@@ -23,22 +23,31 @@ def recibir_clientes():
     return clientes
 
 
-
 @app.route('/')
 def clientes():
-    clientes = recibir_clientes()
-    return render_template("lista.html", clientes=clientes)
-
-
-@app.route('/perfil')
-def cliente():
     clientes = recibir_clientes()
     for i in clientes:
         if i[0]==1:
             cliente = i
     ct = cliente[3] - cliente[4]
     return render_template("perfil.html", cliente=cliente, total = ct)
+    
+@app.route('/login')
+def login():
+    
+    return render_template("iniciosesion.html")
 
+@app.route('/registro')
+def registro():
+    
+    return render_template("registro.html")
+
+
+@app.route('/analiza_empresas')
+def analiza_empresas():
+    return render_template('empresas.html')
+
+ 
 @app.route('/analisis')
 def client():
     client = recibir_clientes()
